@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BODY BY BRUCE | Maximum Power. Zero Excuses.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#FF2A4D',
+                            yellow: '#FFD200',
+                            dark: '#191970',   /* Midnight Blue core */
+                            card: '#191970',   /* Midnight Blue for Cards */
+                            border: '#3b3b98'  /* Vibrant Subdued Navy Border */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Impact', 'Trebuchet MS', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS Classes for Explicit #191970 Styling -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+        
+        /* Base Global Theme Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #191970; /* Midnight Blue Page Background */
+            color: #F3F4F6;
+        }
+
+        /* Explicit Reusable CSS Classes */
+        .page-midnight {
+            background-color: #191970 !important;
+        }
+
+        .card-midnight {
+            background-color: #191970 !important;
+            border: 2px solid #FF2A4D;
+        }
+
+        .card-inner-midnight {
+            background-color: rgba(25, 25, 112, 0.8) !important;
+        }
+
+        .bg-brand-page {
+            background-color: #191970 !important;
+        }
+
+        .bg-card-navy {
+            background-color: #191970 !important;
+        }
+
+        .bg-badge-navy {
+            background-color: rgba(25, 25, 112, 0.9) !important;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FF2A4D 0%, #FFD200 100%);
+            -webkit-background-clip: text;
+            background-clip: text; /* Add this line */
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-red {
+            box-shadow: 0 0 25px rgba(255, 42, 77, 0.45);
+        }
+
+        .glow-yellow {
+            box-shadow: 0 0 20px rgba(255, 210, 0, 0.35);
+        }
+
+        .badge-shake:hover {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+    </style>
+</head>
+<body class="page-midnight min-h-screen flex flex-col justify-between selection:bg-brand-red selection:text-white">
+
+    <!-- ========================================== -->
+    <!-- TOP ANNOUNCEMENT BAR                       -->
+    <!-- ========================================== -->
+    <div class="bg-gradient-to-r from-red-600 via-brand-red to-amber-500 text-black font-extrabold text-xs md:text-sm py-2 px-4 text-center tracking-widest uppercase flex items-center justify-center gap-2 shadow-lg">
+        <i class="fa-solid fa-bolt text-black animate-bounce"></i>
+        <span>WARNING: HIGH VOLTAGE GAINS AHEAD. NOT FOR THE FAINT OF HEART.</span>
+        <i class="fa-solid fa-bolt text-black animate-bounce"></i>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- NAVIGATION HEADER                          -->
+    <!-- ========================================== -->
+    <header class="border-b border-brand-border page-midnight sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo Section -->
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-red p-2.5 rounded-xl shadow-lg glow-red text-white flex items-center justify-center">
+                    <i class="fa-solid fa-dumbbell text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-black tracking-tighter uppercase leading-none italic">
+                        BODY BY <span class="gradient-text">BRUCE</span>
+                    </h1>
+                    <p class="text-[10px] text-amber-400 tracking-widest font-bold uppercase">Six Sigma Certified Strength</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm tracking-wide text-gray-300">
+                <a href="#about" class="hover:text-brand-red transition-colors">THE LEGEND</a>
+                <a href="#programs" class="hover:text-brand-red transition-colors">PROTOCOLS</a>
+                <a href="#calculator" class="hover:text-brand-red transition-colors">BRUCE-O-METER</a>
+                <a href="#testimonials" class="hover:text-brand-red transition-colors">REVIEWS</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <button onclick="scrollToCalc()" class="bg-gradient-to-r from-brand-red to-red-600 hover:from-red-600 hover:to-brand-red text-white font-black px-6 py-3 rounded-xl shadow-md glow-red transform hover:scale-105 transition duration-200 text-xs tracking-wider uppercase flex items-center gap-2">
+                <i class="fa-solid fa-fire"></i> Claim Your Gains
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN CONTENT CONTAINER                     -->
+    <!-- ========================================== -->
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section id="about" class="relative overflow-hidden py-12 md:py-20 lg:py-24 page-midnight">
+            <!-- Background Accent Glows -->
+            <div class="absolute top-10 left-1/4 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Text Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full card-inner-midnight border border-brand-red/60 text-brand-red font-bold text-xs uppercase tracking-widest">
+                            <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                            Official Training Portal
+                        </div>
+
+                        <h2 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
+                            MAXIMUM POWER.<br>
+                            <span class="gradient-text">ZERO EXCUSES.</span>
+                        </h2>
+
+                        <p class="text-lg sm:text-xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            "Bench pressing <span class="text-brand-yellow font-extrabold">260 lbs</span>, pulling against custom FJ rigs, and crushing high-protein <span class="text-brand-red font-extrabold">70% dark chocolate</span> snacks while Mr. holds the wheel."
+                        </p>
+
+                        <!-- Key Stats Badges -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 max-w-xl mx-auto lg:mx-0">
+                            <div class="card-midnight border border-brand-border p-4 rounded-2xl text-center shadow-lg">
+                                <div class="text-3xl font-black text-brand-yellow">260 LBS</div>
+                                <div class="text-xs text-gray-300 font-semibold uppercase mt-1">Casual Bench Press</div>
+                            </div>
+                            <div class="card-midnight border border-brand-border p-4 rounded-2xl text-center shadow-lg">
+                                <div class="text-3xl font-black text-brand-red">70%</div>
+                                <div class="text-xs text-gray-300 font-semibold uppercase mt-1">Dark Cocoa Fuel</div>
+                            </div>
+                            <div class="card-midnight border border-brand-border p-4 rounded-2xl text-center col-span-2 sm:col-span-1 shadow-lg">
+                                <div class="text-3xl font-black text-amber-400">100%</div>
+                                <div class="text-xs text-gray-300 font-semibold uppercase mt-1">FJ Steering Control</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <a href="#programs" class="bg-brand-red hover:bg-red-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-xl glow-red text-center tracking-wider uppercase transition transform hover:-translate-y-1">
+                                Explore Protocols
+                            </a>
+                            <a href="#calculator" class="card-midnight hover:bg-red-950/40 text-gray-200 border border-brand-border font-extrabold px-8 py-4 rounded-2xl text-center tracking-wider uppercase transition">
+                                Test Your Will
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured Photo Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            
+                            <!-- Main Photo Container Card -->
+                            <div class="relative card-midnight rounded-3xl p-3 shadow-2xl overflow-hidden glow-red">
+                                <img src="https://github.com/GitBruceHub/images/blob/main/bybinaction.jpeg?raw=true" 
+                                     alt="Bruce Training with FJ and Security Cat" 
+                                     class="w-full h-auto rounded-2xl object-cover object-center shadow-lg"
+                                     onerror="https://github.com/GitBruceHub/images/blob/main/bybinaction.jpeg?raw=true">
+
+                                <!-- Floating Badge Top Right -->
+                                <div class="absolute top-6 right-6 card-inner-midnight backdrop-blur-md border border-brand-yellow text-brand-yellow text-xs font-black px-3 py-1.5 rounded-xl uppercase shadow-md flex items-center gap-1.5 badge-shake">
+                                    <i class="fa-solid fa-shield-cat text-sm"></i>
+                                    Mr. Guarded
+                                </div>
+
+                                <!-- Photo Caption -->
+                                <div class="mt-3 p-3 card-inner-midnight rounded-xl border border-brand-border text-center">
+                                    <p class="text-xs sm:text-sm font-bold text-gray-200 italic">
+                                        "Bruce conducting outdoor resistance hypertrophy while under the strict supervision of his Cat, Mr.."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Backing Frame -->
+                            <div class="absolute -inset-2 bg-gradient-to-r from-brand-red to-brand-yellow rounded-3xl -z-10 blur-xl opacity-30"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- WORKOUT PROGRAMS GRID (PROTOCOLS)          -->
+        <!-- ========================================== -->
+        <section id="programs" class="py-16 page-midnight border-y border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-black text-brand-red tracking-widest uppercase mb-2">Unconventional Methodologies</h2>
+                    <p class="text-3xl sm:text-5xl font-black uppercase tracking-tight">
+                        THE <span class="gradient-text">BRUCE PROTOCOLS</span>
+                    </p>
+                    <p class="text-gray-400 mt-4 text-sm sm:text-base">
+                        Scientifically unproven, emotionally unstoppable routines built for maximum muscle velocity.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Program Card 1 -->
+                    <div class="card-midnight rounded-3xl p-6 hover:border-brand-yellow transition duration-300 flex flex-col justify-between group shadow-xl">
+                        <div>
+                            <div class="w-14 h-14 card-inner-midnight border border-brand-red text-brand-red rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold uppercase mb-2">FJ Rig Resistance</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Pulling against heavy-duty bands anchored to the classic Toyota FJ while Mr. holds the steering wheel steady.
+                            </p>
+                        </div>
+                        <div class="border-t border-brand-border pt-4 flex items-center justify-between text-xs font-bold text-brand-yellow">
+                            <span>INTENSITY: OVER 9000</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 2 -->
+                    <div class="card-midnight rounded-3xl p-6 hover:border-brand-yellow transition duration-300 flex flex-col justify-between group shadow-xl">
+                        <div>
+                            <div class="w-14 h-14 card-inner-midnight border border-brand-yellow text-brand-yellow rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-cat"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold uppercase mb-2">Mr. Control</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Absolute situational awareness training. Your executive security cat monitors the dash while you grind out reps.
+                            </p>
+                        </div>
+                        <div class="border-t border-brand-border pt-4 flex items-center justify-between text-xs font-bold text-brand-yellow">
+                            <span>CORE STABILITY: 100%</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 3 -->
+                    <div class="card-midnight rounded-3xl p-6 hover:border-brand-yellow transition duration-300 flex flex-col justify-between group shadow-xl">
+                        <div>
+                            <div class="w-14 h-14 card-inner-midnight border border-brand-red text-brand-red rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-cookie-bite"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold uppercase mb-2">Dark Cocoa Hypertrophy</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Fueling chest and shoulder hypertrophy with precisely timed micro-doses of 70% dark chocolate. High antioxidants meet high rep output.
+                            </p>
+                        </div>
+                        <div class="border-t border-brand-border pt-4 flex items-center justify-between text-xs font-bold text-brand-yellow">
+                            <span>PUMP METRICS: INSANE</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 4 -->
+                    <div class="card-midnight rounded-3xl p-6 hover:border-brand-yellow transition duration-300 flex flex-col justify-between group shadow-xl">
+                        <div>
+                            <div class="w-14 h-14 card-inner-midnight border border-brand-yellow text-brand-yellow rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold uppercase mb-2">Lead-To-Cash Muscle Map</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Optimizing your physical transformation with Six Sigma operational efficiency. Eliminating wasteful rest times and streamlining gains.
+                            </p>
+                        </div>
+                        <div class="border-t border-brand-border pt-4 flex items-center justify-between text-xs font-bold text-brand-yellow">
+                            <span>EFFICIENCY: MAXIMIZED</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- INTERACTIVE BRUCE-O-METER WIDGET          -->
+        <!-- ========================================== -->
+        <section id="calculator" class="py-16 md:py-24 relative page-midnight">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="card-midnight rounded-3xl p-6 sm:p-10 shadow-2xl glow-red relative overflow-hidden">
+                    
+                    <div class="text-center max-w-2xl mx-auto mb-8">
+                        <div class="inline-block bg-brand-red text-white text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+                            Interactive Commitment Gauge
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight">THE BRUCE-O-METER</h2>
+                        <p class="text-gray-300 text-sm mt-2">Adjust your daily intensity level to receive personalized guidance directly from Bruce.</p>
+                    </div>
+
+                    <!-- Range Slider Control -->
+                    <div class="space-y-6 max-w-xl mx-auto">
+                        <div class="flex justify-between items-center text-xs font-bold text-gray-300 uppercase">
+                            <span>Lethargy</span>
+                            <span id="sliderValue" class="text-brand-yellow text-base font-black">50% Commitment</span>
+                            <span>Beast Mode</span>
+                        </div>
+
+                        <input id="bruceSlider" type="range" min="1" max="100" value="50" 
+                               class="w-full h-3 card-inner-midnight rounded-lg appearance-none cursor-pointer accent-brand-red border border-brand-border">
+
+                        <!-- Dynamic Output Box -->
+                        <div class="card-inner-midnight border border-brand-border rounded-2xl p-6 text-center space-y-3 min-h-[140px] flex flex-col justify-center items-center shadow-inner">
+                            <i class="fa-solid fa-quote-left text-brand-red text-2xl"></i>
+                            <p id="bruceAdvice" class="text-base sm:text-lg font-bold text-gray-100 italic">
+                                "Moderate effort gets moderate dark chocolate. Let's push that slider up, soldier!"
+                            </p>
+                            <span id="bruceBadge" class="inline-block bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-extrabold px-3 py-1 rounded-full uppercase">
+                                STATUS: WARMING UP
+                            </span>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <button onclick="triggerMotivation()" class="w-full sm:w-auto bg-gradient-to-r from-brand-red to-brand-yellow text-black font-black px-8 py-3.5 rounded-xl uppercase tracking-wider text-xs shadow-lg transition transform hover:scale-105">
+                                <i class="fa-solid fa-bullhorn mr-2"></i> Request Direct Motivation
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TESTIMONIALS SECTION                       -->
+        <!-- ========================================== -->
+        <section id="testimonials" class="py-16 page-midnight border-t border-brand-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-black text-brand-yellow tracking-widest uppercase mb-2">Verified Testimonials</h2>
+                    <p class="text-3xl sm:text-5xl font-black uppercase tracking-tight">
+                        WORD ON THE <span class="gradient-text">STREET</span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="card-midnight p-6 rounded-3xl relative flex flex-col justify-between shadow-xl">
+                        <div class="space-y-4">
+                            <div class="flex text-brand-yellow gap-1 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm italic">
+                                "Before Body by Bruce, I thought dark chocolate was just a treat. Now I realize it's an anabolic engine driving my 200+ lb bench goals. Bruce changed my life!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-brand-border flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-red/20 border border-brand-red flex items-center justify-center font-bold text-brand-red text-sm">
+                                DR
+                            </div>
+                            <div>
+                                <div class="font-bold text-sm text-gray-100">Dave "Ripped" R.</div>
+                                <div class="text-xs text-gray-400">Disciple of the Bench</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 (Cat Testimonial) -->
+                    <div class="card-midnight border-2 border-brand-yellow p-6 rounded-3xl relative flex flex-col justify-between shadow-xl glow-yellow">
+                        <div class="space-y-4">
+                            <div class="flex text-brand-yellow gap-1 text-sm">
+                                <i class="fa-solid fa-shield-cat text-brand-yellow"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-200 text-sm italic font-medium">
+                                "Meow. Purr meow, the FJ steering wheel is securely manned while Bruce pulls resistance bands. 10/10 would drive again."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-brand-border flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center font-bold text-amber-400 text-sm">
+                                <i class="fa-solid fa-cat"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-sm text-amber-300">Mr. The Cat</div>
+                                <div class="text-xs text-amber-400">Executive Security Driver</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="card-midnight p-6 rounded-3xl relative flex flex-col justify-between shadow-xl">
+                        <div class="space-y-4">
+                            <div class="flex text-brand-yellow gap-1 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm italic">
+                                "Pulling against a classic Toyota FJ rig sounded insane at first, but now my core is bulletproof. Bruce is the real deal."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-brand-border flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-red/20 border border-brand-red flex items-center justify-center font-bold text-brand-red text-sm">
+                                TS
+                            </div>
+                            <div>
+                                <div class="font-bold text-sm text-gray-100">Tom S.</div>
+                                <div class="text-xs text-gray-400">Six Sigma Fitness Convert</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="border-t border-brand-border page-midnight py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-dumbbell text-brand-red"></i>
+                <span class="font-black text-sm tracking-widest uppercase">BODY BY BRUCE Copyright @ 
+                  <script type="text/javascript">var year =  new Date () ; document.write  (year.getFullYear()) ;
+                  </script>
+                </span>
+            </div>
+            <p class="text-xs text-gray-400 text-center sm:text-right">
+                Warning: Consult Mr. before attempting heavy FJ resistance training.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- CUSTOM INTERACTIVITY SCRIPT                -->
+    <!-- ========================================== -->
+    <script>
+        const slider = document.getElementById('bruceSlider');
+        const sliderValue = document.getElementById('sliderValue');
+        const bruceAdvice = document.getElementById('bruceAdvice');
+        const bruceBadge = document.getElementById('bruceBadge');
+
+        const tiers = [
+            {
+                max: 20,
+                text: '"Are you sleeping? The feline driver is judging your lack of velocity. Get on the resistance bands!"',
+                badge: 'STATUS: DRIVER SIDE NAPPING'
+            },
+            {
+                max: 50,
+                text: '"Moderate effort gets moderate dark chocolate. Let\'s push that slider up, soldier!"',
+                badge: 'STATUS: WARMING UP'
+            },
+            {
+                max: 80,
+                text: '"Now we\'re cooking! FJ rig anchored, bands locked, muscles firing on all cylinders!"',
+                badge: 'STATUS: SOLID GAINS ZONE'
+            },
+            {
+                max: 100,
+                text: '"MAXIMUM POWER ENGAGED! FULL FJ RESISTANCE HYPERTROPHY! MR. THE CAT SALUTES YOU FROM THE WHEEL!"',
+                badge: 'STATUS: BRUCE MODE UNLOCKED'
+            }
+        ];
+
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            sliderValue.textContent = `${val}% Commitment`;
+
+            for (let tier of tiers) {
+                if (val <= tier.max) {
+                    bruceAdvice.textContent = tier.text;
+                    bruceBadge.textContent = tier.badge;
+                    break;
+                }
+            }
+        });
+
+        function triggerMotivation() {
+            const quotes = [
+                '"Rest time is just dark chocolate snack time in disguise!"',
+                '"If the FJ holds steady, your core holds steady!"',
+                '"Six Sigma rule #1: Eliminate form defects, pull against the rig!"',
+                '"Mr. the Cat at the wheel never blinks. Neither do champions!"'
+            ];
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            bruceAdvice.textContent = randomQuote;
+            bruceBadge.textContent = 'STATUS: DIRECT BRUCE MOTIVATION';
+        }
+
+        function scrollToCalc() {
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
